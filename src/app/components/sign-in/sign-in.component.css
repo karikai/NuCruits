@@ -1,0 +1,40 @@
+html { height: 100%; }
+
+body {
+    height:100%;
+}
+
+#sign-in-pane {
+    background-color: #FFE87B;
+}
+
+#sign-in-pane > * > img {
+    display: block;
+    width: 50%;
+    margin: auto;
+}
+
+.input-container {
+    width: 100%;
+}
+
+#forgot {
+    margin: 2% 0;
+    text-align: center;
+    font-size: .8em;
+    font-style: italic;
+    cursor: pointer;
+}
+
+#info-pane {
+    text-align: center;
+    margin-top: 20%;
+}
+
+#info-pane > h1 {
+    color: #6D5A00;
+}
+
+#info-pane > p {
+    color: #947A01;
+}

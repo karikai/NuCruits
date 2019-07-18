@@ -1,0 +1,81 @@
+<div *ngIf="isLoaded" class="dashboard-container">
+    <app-side-nav></app-side-nav>
+    <div id="content">
+        <input id="main-job-search-bar" type="text">
+        <div id="search-options">
+            <p>Sort</p>
+            <p>Filter</p>
+        </div>
+
+        <h1 class="applications-title">Active Job Listings ({{ activeJobs.length }})</h1>
+
+        <div class="tile-row-slide">
+            <div *ngFor="let item of activeJobs">
+                <app-job-tile [jid]="item.jobId" [title]="item.positionTitle"></app-job-tile>
+            </div>
+            <div *ngIf="activeJobs.length === 0">
+                <h1>There are no job post.</h1>
+            </div>
+        </div>
+
+        <h1 class="applications-title">Fill Job Listings ({{ filledJobs.length }})</h1>
+
+        <div class="tile-row-slide">
+            <div *ngFor="let item of filledJobs">
+                <app-job-tile [title]="item.positionTitle"></app-job-tile>
+            </div>
+            <div *ngIf="filledJobs.length === 0">
+                <h1>There are no job post.</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- <input id="main-job-search-bar" type="text">
+<div id="search-options">
+    <p>Sort</p>
+    <p>Filter</p>
+</div>
+
+<h1 class="applications-title">Active Job Listings (12)</h1>
+
+<div class="tile-row-slide">
+    <app-job-tile></app-job-tile>
+    <app-job-tile></app-job-tile>
+    <app-job-tile></app-job-tile>
+    <app-job-tile></app-job-tile>
+    <app-job-tile></app-job-tile>
+    <app-job-tile></app-job-tile>
+    <app-job-tile></app-job-tile>
+    <app-job-tile></app-job-tile>
+    <app-job-tile></app-job-tile>
+    <app-job-tile></app-job-tile>
+    <app-job-tile></app-job-tile>
+    <app-job-tile></app-job-tile>
+    <app-job-tile></app-job-tile>
+    <app-job-tile></app-job-tile>
+    <app-job-tile></app-job-tile>
+    <app-job-tile></app-job-tile>
+</div>
+
+<h1 class="applications-title">Fill Job Listings (12)</h1>
+
+<div class="tile-row-slide">
+    <app-job-tile></app-job-tile>
+    <app-job-tile></app-job-tile>
+    <app-job-tile></app-job-tile>
+    <app-job-tile></app-job-tile>
+    <app-job-tile></app-job-tile>
+    <app-job-tile></app-job-tile>
+    <app-job-tile></app-job-tile>
+    <app-job-tile></app-job-tile>
+    <app-job-tile></app-job-tile>
+    <app-job-tile></app-job-tile>
+    <app-job-tile></app-job-tile>
+    <app-job-tile></app-job-tile>
+    <app-job-tile></app-job-tile>
+    <app-job-tile></app-job-tile>
+    <app-job-tile></app-job-tile>
+    <app-job-tile></app-job-tile>
+</div> -->

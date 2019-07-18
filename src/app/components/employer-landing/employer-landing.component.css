@@ -1,0 +1,38 @@
+#info-container {
+    display: flex;
+    width: 70%;
+    margin: 5% auto;
+}
+
+#info-text {
+    width: 30%;
+    text-align: right;
+}
+
+#info-text > h1 {
+    color: #FFD201;
+    font-size: 3.5em;
+    margin-bottom: 0%;
+}
+
+#info-text > p {
+    color: #947A01;
+    font-size: .75em;
+}
+
+
+#infographic {
+    width: 80%;
+}
+
+button {
+    display: block;
+    margin: auto;
+    width: 50%;
+    padding: 3.5%;
+    background-color: #FFD200;
+    border: #917908;
+    border-radius: 20px;
+    color: white;
+    font-weight: 700;
+}

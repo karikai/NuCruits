@@ -1,0 +1,47 @@
+html { height: 100%; }
+
+body {
+    height:100%;
+}
+
+#sign-in-pane {
+    background-color: #FFE87B;
+}
+
+#sign-in-pane > * > img {
+    display: block;
+    width: 25%;
+    margin: 5% auto;
+}
+
+.input-container {
+    width: 100%;
+}
+
+#forgot {
+    margin: 2% 0;
+    text-align: center;
+    font-size: .8em;
+    font-style: italic;
+    cursor: pointer;
+}
+
+#info-pane {
+    width: 25%;
+    margin: auto;
+    margin-top: 5%;
+    text-align: left;
+}
+
+#info-pane > h1 {
+    color: #6D5A00;
+    font-size: 3em;
+}
+
+#info-pane > p {
+    color: #947A01;
+}
+
+textarea {
+    height: 10em;
+}

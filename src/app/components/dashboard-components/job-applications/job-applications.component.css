@@ -1,0 +1,11 @@
+.tile-row-slide {
+    overflow: auto;
+    display: flex;
+    width: 82.5%;
+    margin: 2% auto;
+}
+
+.job-tile-container {
+    width: 250px;
+    margin-right: 40px;
+}

@@ -1,0 +1,22 @@
+<div *ngIf="!isEmployer" id="side-nav">
+    <img src="assets/images/White-NuCruits-Yellow-Glass-Logo.png">
+    <app-profile-tab [id]="userObject.uid" [name]="userObject.firstName + ' ' + userObject.lastName" [picture]="userObject.profilePicture" >
+    </app-profile-tab>
+    <input id="job-bar" type="text" [(ngModel)]="keyword" (keyup.enter)="jobSearch()" placeholder="Enter a Job Title">
+    <a routerLink="/feed"><p>Feed </p><img src="assets/icons/web.svg"></a>
+    <a routerLink="/messenger"><p>Messages </p><img src="assets/icons/envelope.svg"></a>
+    <a routerLink="/job-applications"><p>Jobs </p><img src="assets/icons/suitcase.svg"></a>
+    <a (click)="signOut()"><p>Sign Out </p><img src="assets/icons/logout.svg"></a>
+</div>
+
+<div *ngIf="isEmployer" id="side-nav">
+    <img src="assets/images/White-NuCruits-Yellow-Glass-Logo.png">
+    <app-profile-tab [id]="userObject.uid" [name]="userObject.companyName" [picture]="userObject.profilePicture" >
+    </app-profile-tab>
+    <input id="job-bar" type="text" [(ngModel)]="keyword" (keyup.enter)="jobSearch()" placeholder="Enter a Job Title">
+    <a routerLink="/feed"><p>Feed </p><img src="assets/icons/web.svg"></a>
+    <a routerLink="/messenger"><p>Messages </p><img src="assets/icons/envelope.svg"></a>
+    <a routerLink="/post-job"><p>Post Jobs </p><img src="assets/icons/suitcase.svg"></a>
+    <a routerLink="/job-listings"><p>View Job Listings </p><img src="assets/icons/suitcase.svg"></a>
+    <a (click)="signOut()"><p>Sign Out </p><img src="assets/icons/logout.svg"></a>
+</div>

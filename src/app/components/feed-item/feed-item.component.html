@@ -1,0 +1,13 @@
+<div class="feed-container">
+    <div class="feed-header">
+        <img (click)="goToProfile()" class="feed-picture" src="{{ picture }}" alt="">
+        <div>
+            <h3>{{ name }}</h3>
+            <p>{{ date.seconds | timestamp | date:'medium' }}</p>
+        </div>
+    </div>
+    <div class="feed-content">
+        <p>{{ content }}</p>
+    </div>
+    <span>0 <img src="assets/icons/like.svg" alt=""></span>
+</div>

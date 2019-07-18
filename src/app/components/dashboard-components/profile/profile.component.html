@@ -1,0 +1,73 @@
+<div *ngIf="isLoaded" class="dashboard-container">
+    <app-side-nav></app-side-nav>
+    <div id="content">
+        <div *ngIf="userObject.accountType === 'student'" id="profile-container">
+            <div id="profile-header">
+                <div id="profile-info">
+                    <h2>{{ userProfile.firstName }} {{ userProfile.lastName }}</h2>
+                    <p>{{ userProfile.school }}</p>
+                    <p>{{ userProfile.major }}</p>
+                    <p>{{ userProfile.bio }}</p>
+                </div>
+                <img id="profile-picture" src="{{ userProfile.profilePicture }}" alt="Kari Abraham's profile picture">
+            </div>
+
+            <!-- <span><img id="add-friend" src="assets/icons/user.png"><img src="assets/icons/email.png"></span> -->
+
+            <div *ngFor="let item of userFeed" id="feed-list">
+                <app-feed-item [id]="item.id" [name]="item.name" [content]="item.content" [picture]="item.picture"
+                    [date]="item.date">
+                </app-feed-item>
+            </div>
+
+            <div *ngIf="userFeed.length === 0">
+                <h1>No feed items to display.</h1>
+            </div>
+        </div>
+
+        <div *ngIf="userObject.accountType === 'employer'" id="profile-container">
+            <div id="profile-header">
+                <div id="profile-info">
+                    <h2>{{ userProfile.companyName }}</h2>
+                    <p>{{ userProfile.city }}, {{ userProfile.state }}</p>
+                </div>
+                <img id="profile-picture" src="{{ userProfile.profilePicture }}" alt="">
+            </div>
+
+            <!-- <span><img id="add-friend" src="assets/icons/user.png"><img src="assets/icons/email.png"></span> -->
+
+            <div *ngFor="let item of userFeed" id="feed-list">
+                <app-feed-item [id]="item.id" [name]="item.name" [content]="item.content" [picture]="item.picture"
+                    [date]="item.date">
+                </app-feed-item>
+            </div>
+
+            <div *ngIf="userFeed.length === 0">
+                <h1>No feed items to display.</h1>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+<!-- <div id="profile-container">
+    <div id="profile-header">
+        <div id="profile-info">
+            <h2>Kari Abraham</h2>
+            <p>Central Connecticut State University</p>
+            <p>Finance</p>
+            <p>This is an example of a bio. All info will be added here. (Show More)</p>
+        </div>
+        <img id="profile-picture" src="assets/images/Profile-Picture.jpg" alt="Kari Abraham's profile picture">
+    </div>
+
+    <span><img id="add-friend" src="assets/icons/user.png"><img src="assets/icons/email.png"></span>
+
+    <div>
+        <app-feed-item></app-feed-item>
+        <app-feed-item></app-feed-item>
+        <app-feed-item></app-feed-item>
+    </div>
+</div> -->

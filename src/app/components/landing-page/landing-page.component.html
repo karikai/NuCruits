@@ -1,0 +1,19 @@
+<div *ngIf="!isSignIn">
+    <a routerLink=""><img id="nav-logo" src="assets/images/NuCruit.png"></a>
+    <app-navbar></app-navbar>
+
+    <div id="info-container">
+        <div id="info-text">
+            <h1>Sign Up <br> for NuCruits</h1>
+            <p>Welcome to the employment platform designed for you, the student. NuCruits helps connect you with
+                companies that are
+                looking for an influx of young talent. Sign up and utilize your degree today.</p>
+            <button (click)="goSignUp()">Sign Up</button>
+        </div>
+        <img id="infographic" src="assets/images/workforce.png" alt="A photo of graduates and office workers">
+    </div>
+</div>
+
+<div *ngIf="isSignIn">
+    <app-feed></app-feed>
+</div>

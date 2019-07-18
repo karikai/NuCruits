@@ -1,0 +1,47 @@
+<div class="double-pane-container">
+    <div *ngIf="stage !== 3" id="info-pane">
+        <h1>Start Posting <br> Jobs Today!</h1>
+        <p>The sooner you sign up with NuCruits, the sooner you can find young talent.</p>
+    </div>
+    <div *ngIf="stage === 3" id="info-pane">
+        <h1>Upload a Photo <br> to Standout</h1>
+        <p>By joining the NuCruits roster, you become a part of a rich network students and employers. These
+            employers are looking for students and recent grads like you to help propel their company forward.</p>
+    </div>
+    <div *ngIf="stage === 1" id="sign-in-pane">
+        <a routerLink=""><img src="assets/images/White-NuCruits-Yellow-Glass-Logo.png" alt="Yellow NuCruits logo"></a>
+        <div class="input-container">
+            <h1>Sign Up</h1>
+            <p>Email</p>
+            <input [(ngModel)]="employerObject.email" type="text">
+            <p>Password</p>
+            <input [(ngModel)]="password" type="text">
+            <p>Confirm Password</p>
+            <input [(ngModel)]="repassword" type="text">
+            <button (click)="emailPasswordValidation()">Next</button>
+        </div>
+    </div>
+    <div *ngIf="stage === 2" id="sign-in-pane">
+        <a routerLink=""><img src="assets/images/White-NuCruits-Yellow-Glass-Logo.png" alt="Yellow NuCruits logo"></a>
+        <div class="input-container">
+            <p>Company Name</p>
+            <input [(ngModel)]="employerObject.companyName" type="text">
+            <p>State</p>
+            <app-state-selector (stateEmitter)="getState($event)"></app-state-selector>
+            <p>City</p>
+            <input [(ngModel)]="employerObject.city" type="text">
+            <button (click)="backStage()">Back</button>
+            <button (click)="infoValidation()">Next</button>
+        </div>
+    </div>
+    <div *ngIf="stage === 3" id="sign-in-pane">
+        <a routerLink=""><img src="assets/images/White-NuCruits-Yellow-Glass-Logo.png" alt="Yellow NuCruits logo"></a>
+        <div class="input-container">
+            <img id="upload-demo" src="https://prieyes.com/wp-content/uploads/2019/04/no-user.jpg" alt="">
+            <input type="file" id="profile-picutre">
+            <button (click)="backStage()">Back</button>
+            <button (click)="uploadPicture()">Upload</button>
+            <button (click)="signUp()">Sign Up</button>
+        </div>
+    </div>
+</div>

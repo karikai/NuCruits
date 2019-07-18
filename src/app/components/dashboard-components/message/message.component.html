@@ -1,0 +1,127 @@
+<div class="dashboard-container">
+    <app-side-nav></app-side-nav>
+    <div id="content">
+        <div *ngIf="!inMessageThread" id="message-container">
+            <div id="message-header">
+                <h1>Conversation</h1>
+                <span (click)="newThread()">+</span>
+            </div>
+            <div (click)="openThread(item.threadId, item.name, item.picture)" *ngFor="let item of messagePreviews" class="message-thread">
+                <img class="feed-picture" src="{{ item.picture }}" alt="">
+                <div>
+                    <h3>{{ item.name }}</h3>
+                    <p>{{ item.lastMessage }}</p>
+                </div>
+            </div>
+        </div>
+    
+        <div *ngIf="!inMessageThread && messageDialogBox" id="new-thread">
+            <p>Recipient</p>
+            <input [(ngModel)]="newMessageRecipient" type="text">
+            <p>Message</p>
+            <textarea [(ngModel)]="newMessageText"></textarea>
+            <button (click)="createThread()">Send</button>
+        </div>
+
+        <div *ngIf="inMessageThread" id="conversation">
+            <div id="conversation-header">
+                <span>
+                    <img class="feed-picture" src="{{ currentRecipientPicture }}" alt="">
+                    <p>{{ currentRecipientName }}</p>
+                </span>
+            </div>
+            <div id="conversation-container">
+                <!-- <div class="message-row">
+                    <div class="message-box sender">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora aspernatur totam exercitationem
+                            dolor quam fugit, laborum amet ex deleniti, rem sint distinctio debitis magnam! Quis similique dolor
+                            ea quaerat reprehenderit!</p>
+                    </div>
+                </div>
+                <div class="message-row">
+                    <div class="message-box reciever">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora aspernatur totam exercitationem
+                            dolor quam fugit, laborum amet ex deleniti, rem sint distinctio debitis magnam! Quis similique dolor
+                            ea quaerat reprehenderit!</p>
+                    </div>
+                </div> -->
+                <div *ngFor="let message of currentThread.messages" class="message-row">
+                        <div *ngIf="message.from === this.userObject.uid" class="message-box reciever">
+                            <p>{{ message.body }}</p>
+                        </div>
+                        <div *ngIf="message.from !== this.userObject.uid" class="message-box sender">
+                            <p>{{ message.body }}</p>
+                        </div>
+                </div>
+            </div>
+            <textarea (keyup.enter)="sendMessage()" [(ngModel)]="currentMessageText" id="conversation-input"></textarea>
+        </div>
+    </div>
+</div>
+
+<!-- <div id="message-container">
+    <div id="message-header">
+        <h1>Conversation</h1>
+    </div>
+    <div class="message-thread">
+        <img class="feed-picture" src="assets/images/Profile-Picture.jpg" alt="">
+        <div>
+            <h3>Kari Abraham</h3>
+            <p>This is a test message check it out.</p>
+        </div>
+    </div>
+    <div class="message-thread">
+        <img class="feed-picture" src="assets/images/Profile-Picture.jpg" alt="">
+        <div>
+            <h3>Kari Abraham</h3>
+            <p>This is a test message check it out.</p>
+        </div>
+    </div>
+    <div class="message-thread">
+        <img class="feed-picture" src="assets/images/Profile-Picture.jpg" alt="">
+        <div>
+            <h3>Kari Abraham</h3>
+            <p>This is a test message check it out.</p>
+        </div>
+    </div>
+</div>
+
+<div id="new-thread">
+    <p>Recipient</p>
+    <input type="text">
+    <p>Message</p>
+    <textarea></textarea>
+    <button>Send</button>
+</div> -->
+
+<!-- <div id="conversation">
+    <div id="conversation-header">
+        <span>
+            <img class="feed-picture" src="assets/images/Profile-Picture.jpg" alt="">
+            <p>Kari Abraham</p>
+        </span>
+    </div>
+    <div id="conversation-container">
+        <div class="message-row">
+            <div class="message-box sender">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora aspernatur totam exercitationem dolor quam fugit, laborum amet ex deleniti, rem sint distinctio debitis magnam! Quis similique dolor ea quaerat reprehenderit!</p>
+            </div>
+        </div>
+        <div class="message-row">
+            <div class="message-box reciever">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora aspernatur totam exercitationem dolor quam fugit, laborum amet ex deleniti, rem sint distinctio debitis magnam! Quis similique dolor ea quaerat reprehenderit!</p>
+            </div>
+        </div>
+        <div class="message-row">
+            <div class="message-box reciever">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora aspernatur totam exercitationem dolor quam fugit, laborum amet ex deleniti, rem sint distinctio debitis magnam! Quis similique dolor ea quaerat reprehenderit!</p>
+            </div>
+        </div>
+        <div class="message-row">
+            <div class="message-box sender">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora aspernatur totam exercitationem dolor quam fugit, laborum amet ex deleniti, rem sint distinctio debitis magnam! Quis similique dolor ea quaerat reprehenderit!</p>
+            </div>
+        </div>
+    </div>
+    <textarea id="conversation-input"></textarea>
+</div> -->

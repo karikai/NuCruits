@@ -1,0 +1,10 @@
+<div *ngIf="isLoaded " class="dashboard-container">
+    <app-side-nav></app-side-nav>
+    <div id="content">
+        <textarea [(ngModel)]="postContent" (keyup.enter)="postFeed()" id="feed-input"></textarea>
+        <div *ngFor="let item of feedItems">
+            <app-feed-item [id]="item.id" [name]="item.name" [content]="item.content" [picture]="item.picture" [date]="item.date"></app-feed-item>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,62 @@
+<div *ngIf="isLoaded" class="dashboard-container">
+    <app-side-nav></app-side-nav>
+    <div id="content">
+        <div>
+            <div class="job-container">
+                <h1>{{ job.positionTitle }}</h1>
+                <h3>NuCruits</h3>
+                <p>{{ job.city }}, {{ job.state }}</p>
+                <p>{{ job.date.seconds | timestamp | date }}</p>
+                <h1>Qualifications</h1>
+                <p>{{ job.qualifications }}</p>
+                <h1>Responsibilities</h1>
+                <p>{{ job.responsibilities }}</p>
+                <h1>Duties</h1>
+                <p>{{ job.duties }}</p>
+                <button>Edit</button>
+            </div>
+            <h2>Applicants (17)</h2>
+            <div *ngIf="applicants.length === 0">
+                <h1>There are no applicants.</h1>
+            </div>
+            <div *ngFor="let fourJobs of collectionsOfFour()" class="tile-row">
+                <div *ngFor="let applicant of fourJobs">
+                    <app-applicant-tile [name]="applicant.name" [id]="applicant.id" [major]="applicant.major" [picture]="applicant.picture"></app-applicant-tile>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <div>
+    <app-job-view></app-job-view>
+    <h2>Applicants (17)</h2>
+    <div class="tile-row">
+        <app-applicant-tile></app-applicant-tile>
+        <app-applicant-tile></app-applicant-tile>
+        <app-applicant-tile></app-applicant-tile>
+        <app-applicant-tile></app-applicant-tile>
+    </div>
+    <div class="tile-row">
+        <app-applicant-tile></app-applicant-tile>
+        <app-applicant-tile></app-applicant-tile>
+        <app-applicant-tile></app-applicant-tile>
+        <app-applicant-tile></app-applicant-tile>
+    </div>
+    <div class="tile-row">
+        <app-applicant-tile></app-applicant-tile>
+        <app-applicant-tile></app-applicant-tile>
+        <app-applicant-tile></app-applicant-tile>
+        <app-applicant-tile></app-applicant-tile>
+    </div>
+    <div class="tile-row">
+        <app-applicant-tile></app-applicant-tile>
+    </div>
+    <h2>Finalist (4)</h2>
+    <div class="tile-row">
+        <app-applicant-tile></app-applicant-tile>
+        <app-applicant-tile></app-applicant-tile>
+        <app-applicant-tile></app-applicant-tile>
+        <app-applicant-tile></app-applicant-tile>
+    </div>
+</div> -->

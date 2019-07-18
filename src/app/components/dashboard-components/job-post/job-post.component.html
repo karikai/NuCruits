@@ -1,0 +1,39 @@
+<div class="dashboard-container">
+    <app-side-nav></app-side-nav>
+    <div id="content">
+        <div id="job-input-container">
+            <h1>Post Job</h1>
+            <p>Job Title</p>
+            <input [(ngModel)]="job.positionTitle" type="text">
+            <p>City</p>
+            <input [(ngModel)]="job.city" type="text">
+            <p>State</p>
+            <input [(ngModel)]="job.state" type="text">
+            <p>Responsibilities</p>
+            <textarea [(ngModel)]="job.responsibilities"></textarea>
+            <p>Duties</p>
+            <textarea [(ngModel)]="job.duties"></textarea>
+            <p>Qualifications</p>
+            <textarea [(ngModel)]="job.qualifications"></textarea>
+            <button (click)="postJob()">Post</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- <div id="job-input-container">
+    <h1>Post Job</h1>
+    <p>Job Title</p>
+    <input type="text">
+    <p>City</p>
+    <input type="text">
+    <p>State</p>
+    <input type="text">
+    <p>Responsibilities</p>
+    <textarea></textarea>
+    <p>Duties</p>
+    <textarea></textarea>
+    <p>Qualifications</p>
+    <textarea></textarea>
+    <button>Post</button>
+</div> -->

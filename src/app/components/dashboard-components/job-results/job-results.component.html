@@ -1,0 +1,30 @@
+<div class="dashboard-container">
+    <app-side-nav></app-side-nav>
+    <div id="content">
+        <input [(ngModel)]="keyword" (keyup.enter)="searchByKeyword(this.keyword)" id="main-job-search-bar" type="text">
+        <div id="search-options">
+            <p>Sort</p>
+            <p>Filter</p>
+        </div>
+    
+        <div *ngFor="let fourJobs of collectionsOfFour()" class="tile-row">
+            <div *ngFor="let job of fourJobs">
+                <app-job-tile [jid]="job.jobId" [title]="job.positionTitle" [description]="job.responsibilities"></app-job-tile>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- <input id="main-job-search-bar" type="text">
+<div id="search-options">
+    <p>Sort</p>
+    <p>Filter</p>
+</div>
+
+<div class="tile-row">
+    <app-job-tile></app-job-tile>
+    <app-job-tile></app-job-tile>
+    <app-job-tile></app-job-tile>
+    <app-job-tile></app-job-tile>
+</div> -->

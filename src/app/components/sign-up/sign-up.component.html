@@ -1,0 +1,73 @@
+<div class="double-pane-container">
+    <div *ngIf="stage !== 4" id="info-pane">
+        <h1>What are you <br> waiting for <br> Sign Up Now!</h1>
+        <p>By joining the NuCruits roster, you become a part of a rich network students and employers. These 
+            employers are looking for students and recent grads like you to help propel their company forward.</p>
+    </div>
+    <div *ngIf="stage === 4" id="info-pane">
+        <h1>Upload a Photo <br> to Standout</h1>
+        <p>By joining the NuCruits roster, you become a part of a rich network students and employers. These 
+            employers are looking for students and recent grads like you to help propel their company forward.</p>
+    </div>
+    <div *ngIf="stage === 1" id="sign-in-pane">
+        <a routerLink=""><img src="assets/images/White-NuCruits-Yellow-Glass-Logo.png" alt="Yellow NuCruits logo"></a>
+        <div class="input-container">
+            <h1>Sign Up</h1>
+            <p>Email</p>
+            <input [(ngModel)]="studentObject.email" type="text">
+            <p>Password</p>
+            <input [(ngModel)]="password" type="text">
+            <p>Confirm Password</p>
+            <input [(ngModel)]="repassword" type="text">
+            <button (click)="emailPasswordValidation()">Next</button>
+        </div>
+    </div>
+    <div *ngIf="stage === 2" id="sign-in-pane">
+        <a routerLink=""><img src="assets/images/White-NuCruits-Yellow-Glass-Logo.png" alt="Yellow NuCruits logo"></a>
+        <div class="input-container">
+            <p>First Name</p>
+            <input [(ngModel)]="studentObject.firstName" type="text">
+            <p>Last Name</p>
+            <input [(ngModel)]="studentObject.lastName" type="text">
+            <p>State</p>
+            <app-state-selector (stateEmitter)="getState($event)"></app-state-selector>
+            <p>City</p>
+            <input [(ngModel)]="studentObject.city" type="text">
+            <button (click)="backStage()">Back</button>
+            <button (click)="infoValidation()">Next</button>
+        </div>
+    </div>
+    <div *ngIf="stage === 3" id="sign-in-pane">
+        <a routerLink=""><img src="assets/images/White-NuCruits-Yellow-Glass-Logo.png" alt="Yellow NuCruits logo"></a>
+        <div class="input-container">
+            <p>Major</p>
+            <app-major-selector (majorEmitter)="getMajor($event)"></app-major-selector>
+            <p>Graduation Year</p>
+            <select [(ngModel)]="studentObject.gradYear">
+                <option value="2015">2015</option>
+                <option value="2016">2016</option>
+                <option value="2017">2017</option>
+                <option value="2018">2018</option>
+                <option value="2019">2019</option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+            </select>
+            <p>College</p>
+            <app-school-selector (schoolEmitter)="getSchool($event)"></app-school-selector>
+            <button (click)="backStage()">Back</button>
+            <button (click)="studentValidation()">Next</button>
+        </div>
+    </div>
+    <div *ngIf="stage === 4" id="sign-in-pane">
+        <a routerLink=""><img src="assets/images/White-NuCruits-Yellow-Glass-Logo.png" alt="Yellow NuCruits logo"></a>
+        <div class="input-container">
+            <img id="upload-demo" src="https://prieyes.com/wp-content/uploads/2019/04/no-user.jpg" alt="">
+            <input type="file" id="profile-picutre">
+            <button (click)="backStage()">Back</button>
+            <button (click)="uploadPicture()">Upload</button>
+            <button (click)="signUp()">Sign Up</button>
+        </div>
+    </div>
+</div>

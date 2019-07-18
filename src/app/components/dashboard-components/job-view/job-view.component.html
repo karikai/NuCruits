@@ -1,0 +1,18 @@
+<div class="dashboard-container">
+    <app-side-nav></app-side-nav>
+    <div id="content">
+        <div *ngIf="isLoaded" class="job-container">
+            <h1>{{ job.positionTitle }}</h1>
+            <h3>{{ companyObject.name }}</h3>
+            <p>{{ job.city }}, {{ job.state }}</p>
+            <p>{{ job.date.seconds | timestamp | date }}</p>
+            <h1>Qualifications</h1>
+            <p>{{ job.qualifications }}</p>
+            <h1>Responsibilities</h1>
+            <p>{{ job.responsibilities }}</p>
+            <h1>Duties</h1>
+            <p>{{ job.duties }}</p>
+            <button (click)="apply()">Apply</button>
+        </div>
+    </div>
+</div>

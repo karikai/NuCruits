@@ -1,0 +1,36 @@
+#container-c {
+    width: 100%;
+}
+
+.feed-container {
+    padding: 1%;
+    width: 80%;
+    margin: 2.5% auto;
+    margin-top: 0%;
+    border: 1px solid lightgray;
+}
+
+.feed-header {
+    display: flex;
+}
+
+.feed-picture {
+    width: 75px;
+    height: 75px;
+    border: 1px solid lightgray;
+    border-radius: 50%;
+    margin-right: 1%;
+    cursor: pointer;
+}
+
+.feed-content {
+    padding: 2% 1%;
+}
+
+h3 {
+    margin: 0%
+}
+
+span {
+    padding: 0 1%;
+}

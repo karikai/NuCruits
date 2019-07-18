@@ -1,0 +1,17 @@
+#message-header > * {
+    display: inline;
+}
+
+#message-header > span {
+    float: right;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+#new-thread > input {
+    border: 1px grey solid;
+}
+
+#new-thread > textarea {
+    border: 1px grey solid;
+}

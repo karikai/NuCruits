@@ -1,0 +1,4 @@
+.job-tile-container:hover {
+    border: 1px #24a6e2 solid;
+    cursor: pointer;
+}
