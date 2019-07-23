@@ -1,4 +1,4 @@
-<div class="double-pane-container">
+<div class="desktop double-pane-container">
     <div id="sign-in-pane">
         <a routerLink=""><img src="assets/images/White-NuCruits-Yellow-Glass-Logo.png" alt="Yellow NuCruits logo"></a>
         <div class="input-container">
@@ -15,4 +15,14 @@
         <h1>Welcome Back</h1>
         <p>Sign in so you can find great opportunities.</p>
     </div>
+</div>
+
+<div id="sign-in-mobile" class="mobile">
+    <h1>Sign In</h1>
+    <p>Email</p>
+    <input [(ngModel)]="email" type="text">
+    <p>Password</p>
+    <input [(ngModel)]="password" type="text">
+    <p id="forgot">Forgot Password?</p>
+    <button (click)="signIn()" class="mobile-button">Sign In</button>
 </div>

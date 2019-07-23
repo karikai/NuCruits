@@ -41,6 +41,8 @@ import { MessageComponent } from './components/dashboard-components/message/mess
 import { SignUpEmployersComponent } from './components/sign-up-employers/sign-up-employers.component';
 import { ProfileTabComponent } from './components/profile-tab/profile-tab.component';
 import { EmployerLandingComponent } from './components/employer-landing/employer-landing.component';
+import { SecurityComponent } from './components/security/security.component';
+import { MobileNavbarComponent } from './components/mobile-navbar/mobile-navbar.component';
 
 @NgModule({
   declarations: [
@@ -76,7 +78,9 @@ import { EmployerLandingComponent } from './components/employer-landing/employer
     SignUpEmployersComponent,
     ProfileTabComponent,
     TimestampPipe,
-    EmployerLandingComponent
+    EmployerLandingComponent,
+    SecurityComponent,
+    MobileNavbarComponent
   ],
   imports: [
     BrowserModule,

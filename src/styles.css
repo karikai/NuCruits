@@ -139,7 +139,6 @@ body {
     margin: 10% auto;
 }
 
-
 #job-bar {
     display: block;
     width: 60%;
@@ -514,4 +513,252 @@ button {
 
 #conversation-input {
     height: 12.5em;
+}
+
+#mobile-navbar {
+    background: #BCFFAF;
+    padding: 1%;
+    width: 100%;
+}
+
+#mobile-navbar > img {
+    display: block;
+    width: 25%;
+    margin: auto;
+}
+
+.mobile {
+    display: none;
+}
+
+.mobile-button {
+    display: block !important;
+    margin: 5% auto !important;
+    padding: 1% 8% !important;
+    width: 40% !important;
+    border: 1px grey solid !important;
+    background: #3C6834 !important;
+    color: white !important;
+    font-weight: 600 !important;
+    font-size: 1em !important;
+    border-radius: 10px !important;
+}
+
+#content {
+    width: 100%;
+}
+
+#content > h1 {
+    display: block;
+    text-align: center;
+    color: #3C6834;
+}
+
+#content > p {
+    display: block;
+    width: 75%;
+    margin: auto;
+    text-align: center;
+    color: #818181;
+}
+
+#content > img {
+    display: block;
+    width: 50%;
+    margin: auto;
+    margin-top: 10%;
+}
+
+#tabs {
+    display: flex;
+    width: 75%;
+    margin: auto;
+    margin-top: 25%;
+    justify-content: space-between;
+}
+
+#page-title {
+    text-align: center;
+    color: #3C6834;
+}
+
+.mobile-learn-tab {
+    border: grey solid 1px;
+    padding: 2% 5%;
+    width: 80%;
+    margin: 5% auto;
+    text-align: center;
+}
+
+.mobile-learn-tab > p {
+    color: #3C6834;
+    font-weight: 700;
+    font-size: 1.1em;
+}
+
+h1 {
+    text-align: center;
+    color: #3C6834;
+}
+
+#learn-input {
+    display: block;
+    border: grey solid 1px;
+    padding: 2% 5%;
+    width: 80%;
+    margin: 7.5% auto;
+    text-align: center;
+}
+
+#sign-in-mobile > h1 {
+    margin-top: 40%;
+    text-align: center;
+    color: #3C6834;
+}
+
+#sign-in-mobile > p {
+    margin-left: 5%;
+}
+
+#sign-in-mobile > input {
+    display: block;
+    border: grey solid 1px;
+    padding: 2% 5%;
+    width: 80%;
+    margin: auto;
+}
+
+.post-item {
+    display: block;
+    width: 80%;
+    margin: auto;
+    padding: 3.5%;
+    border: 1px grey solid;
+    border-radius: 10px;
+}
+
+.post-header {
+    display: flex;
+}
+
+.post-header > span {
+    width: 60%;
+}
+
+.post-header > span > p {
+    font-size: .8em;
+    margin: 5%;
+}
+
+.image-container {
+    width: 20%;
+}
+
+.image-container > img {
+    display: block;
+    width: 3em;
+    height: 3em;
+    margin: auto;
+    border: solid 1px grey;
+    border-radius: 50%;
+}
+
+#new-post-container {
+    margin-top: 2.5%;
+    margin-bottom: 10%;
+}
+
+#new-post-container > button {
+    margin: 2.5% auto;
+}
+
+#new-post-container > textarea {
+    display: block;
+    height: 5em;
+    width: 85%;
+    padding: 3.5%;
+    margin: auto;
+    border: 1px grey solid;
+    border-radius: 10px;
+}
+
+.post-item-container {
+    margin: 5%;
+}
+
+.mobile-post-item {
+    display: block;
+    width: 80%;
+    margin: 5% auto;
+    padding: 3.5%;
+    border: 1px grey solid;
+    border-radius: 10px;
+}
+
+.mobile-post-header {
+    display: flex;
+}
+
+.mobile-post-header > span {
+    width: 60%;
+}
+
+.mobile-post-header > span > p {
+    font-size: .8em;
+    margin: 5%;
+}
+
+.mobile-image-container {
+    width: 20%;
+}
+
+.mobile-image-container > img {
+    display: block;
+    width: 3em;
+    height: 3em;
+    margin: auto;
+    border: solid 1px grey;
+    border-radius: 50%;
+}
+
+#mobile-info {
+    width: 80%;
+    margin: auto;
+    margin-top: 5%;
+}
+
+#post-job-mobile > h1 {
+    text-align: center;
+    color: #3C6834;
+}
+
+#post-job-mobile > p {
+    margin-left: 5%;
+}
+
+#post-job-mobile > input {
+    display: block;
+    border: grey solid 1px;
+    padding: 2% 5%;
+    width: 80%;
+    margin: auto;
+}
+
+#post-job-mobile > textarea {
+    display: block;
+    border: grey solid 1px;
+    padding: 2% 5%;
+    width: 80%;
+    height: 10em;
+    margin: auto;
+}
+
+@media only screen and (max-width: 768px) {
+    .mobile {
+        display: block;
+    }
+
+    .desktop {
+        display: none;
+    }
 }

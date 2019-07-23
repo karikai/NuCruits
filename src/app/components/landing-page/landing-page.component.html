@@ -1,4 +1,4 @@
-<div *ngIf="!isSignIn">
+<div class="desktop" *ngIf="!isSignIn">
     <a routerLink=""><img id="nav-logo" src="assets/images/NuCruit.png"></a>
     <app-navbar></app-navbar>
 
@@ -12,6 +12,43 @@
         </div>
         <img id="infographic" src="assets/images/workforce.png" alt="A photo of graduates and office workers">
     </div>
+</div>
+
+<div class="mobile" *ngIf="!isSignIn">
+    <app-mobile-navbar></app-mobile-navbar>
+    <div>
+        <div (click)="slideChange()" *ngIf="slideNumber === 1" id="content" class="hide">
+            <h1>Welcome to <br> NuCruits</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam, laboriosam ipsam? Ex ut odit optio
+                nulla!
+                Quasi tempore quis delectus iusto, fugiat libero! Vero reprehenderit porro officiis. Sequi, debitis
+                dolores.</p>
+            <img src="assets/icons/BACKPACK.png" alt="">
+        </div>
+        <div (click)="slideChange()" *ngIf="slideNumber === 2" id="content" class="hide">
+            <h1>Connect with <br> Employers</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam, laboriosam ipsam? Ex ut odit optio
+                nulla!
+                Quasi tempore quis delectus iusto, fugiat libero! Vero reprehenderit porro officiis. Sequi, debitis
+                dolores.</p>
+            <img src="assets/icons/HANDSHAKE.png" alt="">
+        </div>
+        <div *ngIf="slideNumber === 3" id="content">
+            <h1>Sign Up <br> Today</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam, laboriosam ipsam? Ex ut odit optio
+                nulla!
+                Quasi tempore quis delectus iusto, fugiat libero! Vero reprehenderit porro officiis. Sequi, debitis
+                dolores.</p>
+            <img src="assets/icons/PHONE.png" alt="">
+            <button class="mobile-button" (click)="goSignUp()">Sign Up</button>
+        </div>
+    </div>
+    <span id="tabs">
+        <img src="assets/icons/Disabled-Tab.png">
+        <img src="assets/icons/Disabled-Tab.png">
+        <img src="assets/icons/Disabled-Tab.png">
+        <!-- <img src="assets/icons/Current-Tab.png"> -->
+    </span>
 </div>
 
 <div *ngIf="isSignIn">

@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'nucruits';
+  passed = false;
+  passcode: string;
+
+  credentialCheck() {
+    if (this.passcode === 'cruits') {
+      this.passed = true;
+    }
+  }
 }

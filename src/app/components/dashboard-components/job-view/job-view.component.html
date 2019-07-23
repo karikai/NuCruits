@@ -1,4 +1,4 @@
-<div class="dashboard-container">
+<div class="desktop dashboard-container">
     <app-side-nav></app-side-nav>
     <div id="content">
         <div *ngIf="isLoaded" class="job-container">
@@ -14,5 +14,33 @@
             <p>{{ job.duties }}</p>
             <button (click)="apply()">Apply</button>
         </div>
+    </div>
+</div>
+
+<div class="mobile">
+    <app-mobile-navbar></app-mobile-navbar>
+    <div id="mobile-info">
+        <div class="mobile-post-header">
+            <div class="mobile-image-container">
+                <img src="{{ companyObject.picture }}">
+            </div>
+            <span>
+                <p>{{ companyObject.name }}</p>
+                <p>{{ job.city }}, {{ job.state }}</p>
+                <p>{{ job.date.seconds | timestamp | date }}</p>
+            </span>
+        </div>
+
+        <div>
+            <h4>{{ job.positionTitle }}</h4>
+            <p>Responsibilities</p>
+            <p>{{ job.responsibilities }}</p>
+            <p>Qualifications</p>
+            <p>{{ job.qualifications }}</p>
+            <p>Duties</p>
+            <p>{{ job.duties }}</p>
+        </div>
+
+        <button class="mobile-button">Apply</button>
     </div>
 </div>
